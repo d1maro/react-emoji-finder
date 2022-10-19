@@ -5,6 +5,12 @@ import { data } from '../emoji.js';
 import { Card } from "./Card.jsx";
 
 export const Main = () => {
+    function removeRepeats() {
+        data.map((elem) => {
+            elem.keywords = Array.from(new Set(elem.keywords.split(" "))).join(" ");
+        });
+    }
+    removeRepeats(data);
   return (
     <main className="main">
         <div className="container">
