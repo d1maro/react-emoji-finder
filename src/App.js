@@ -1,5 +1,3 @@
-import { data } from "./emoji.js";
-
 import { Header } from "./Components/Header.jsx";
 
 import { Main } from "./Components/Main.jsx";
