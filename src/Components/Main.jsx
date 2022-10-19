@@ -9,7 +9,7 @@ export const Main = () => {
     <main className="main">
         <div className="container">
             <section className="grid__container">
-                {data.map((elem, index) => <Card key={index} symbol={elem.symbol} title={elem.title} keywords={elem.keywords} />)}
+                {data.map((elem) => <Card key={elem.title} symbol={elem.symbol} title={elem.title} keywords={elem.keywords} />)}
             </section>
         </div>
     </main>
