@@ -1,0 +1,140 @@
+/* @import-normalize; */
+
+/* import "../node_modules/normalize.css/normalize.css"; */
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+:root {
+  --main-font: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 986px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 68px;
+  padding-bottom: 100px;
+  background: linear-gradient(92.33deg, #087990 0.12%, #055160 100%);
+}
+
+.header__title {
+  margin-bottom: 4px;
+  font-family: var(--main-font);
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 87px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #cff4fc;
+}
+
+.header__description {
+  font-family: var(--main-font);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #cff4fc;
+}
+
+.header__search {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border-radius: 4px;
+}
+
+.header__input {
+  padding: 22px 0px 21px 32px;
+  box-sizing: border-box;
+  min-width: 820px;
+  min-height: 64px;
+}
+
+.header__input::placeholder {
+  font-family: var(--main-font);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #abb5be;
+}
+
+.main {
+  padding-top: 80px;
+  padding-bottom: 50px;
+
+  background: #edeef3;
+}
+
+.grid__container {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 19px;
+}
+
+.grid__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 24px;
+
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.card__emoji {
+  font-family: var(--main-font);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.card__title {
+  margin-top: 18px;
+  margin-bottom: 12px;
+
+  font-family: var(--main-font);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+
+  text-decoration: underline;
+}
+
+.card__description {
+  font-family: var(--main-font);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #3f444a;
+}
