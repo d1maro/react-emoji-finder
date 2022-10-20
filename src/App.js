@@ -9,18 +9,18 @@ import { Main } from "./Components/Main.jsx";
 import { Card } from "./Components/Card.jsx";
 
 function App() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); // задаем useState для всего приложения
 
-  const formHandler = (event) => event.preventDefault();
+  const formHandler = (event) => event.preventDefault(); // отменяем перезагрузку страницы при отправке формы
 
   const inputHandler = (event) => {
-    let userText = event.target.value.toLowerCase().trim();
-    setValue(userText);
+    let userText = event.target.value.toLowerCase().trim(); // задаем переменную для значения инпута, сразу приводим к нижнему регистру и удаляем возможные лишние пробелы
+    setValue(userText); // задаем значение для функции в useState
   };
 
   const search = data.filter(
     (elem) => elem.keywords.includes(value) || elem.title.includes(value)
-  );
+  ); // массив, в который попадают отфильтрованные по поиску данные
 
   return (
     <>

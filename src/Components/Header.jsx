@@ -1,5 +1,10 @@
 import React from 'react'
 
+// здесь пропсы:
+// onSubmit - для preventDefaul (formHandler в App)
+// onInput - для передачи данных из поиска (inputHandler в App)
+// value - само значение в инпуте
+
 export const Header = ( { onSubmit, onInput, value } ) => {
   return (
     <header className="header">

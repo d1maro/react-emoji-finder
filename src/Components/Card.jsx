@@ -1,5 +1,6 @@
 import React from 'react'
-import { data } from '../emoji'
+
+// здесь передаем карточке пропсы символ, тайтл и ключевые слова
 
 export const Card = ({symbol, title, keywords }) => {
   return (
