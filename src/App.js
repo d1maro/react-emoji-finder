@@ -8,6 +8,8 @@ import { Main } from "./Components/Main.jsx";
 
 import { Card } from "./Components/Card.jsx";
 
+import { Pagination } from "./Components/Pagination.jsx";
+
 function App() {
   const [value, setValue] = useState(""); // задаем useState для всего приложения
 
@@ -22,11 +24,21 @@ function App() {
     (elem) => elem.keywords.includes(value) || elem.title.includes(value)
   ); // массив, в который попадают отфильтрованные по поиску данные
 
+  const [perPage, setPerPage] = useState(12); // задаем useState для количества карточек на странице
+
+  const [currentPage, setCurrentPage] = useState(1); // задаем useState для текущей страницы
+
+  let lastElem = currentPage * perPage; // задаем и вычисляем первый элемент
+
+  let firstElem = lastElem - perPage; // задаем и вычисляем последний элемент
+
+  let arr = data.slice(firstElem, lastElem); // задаем новый массив для вырезанного куска под страницу
+
   return (
     <>
       <Header value={value} onSubmit={formHandler} onInput={inputHandler} />
       <Main>
-        {search.map((elem) => (
+        {arr.map((elem) => (
           <Card
             key={elem.title}
             symbol={elem.symbol}
@@ -37,6 +49,10 @@ function App() {
           />
         ))}
       </Main>
+      <Pagination
+        lastIndex={Math.ceil(data.length / perPage)} // передаем функцию с последним индексом
+        setCurrentPage={setCurrentPage} // передаем функцию для текущей страницы
+      />
     </>
   );
 }
