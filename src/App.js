@@ -10,6 +10,8 @@ import { Card } from "./Components/Card.jsx";
 
 import { Pagination } from "./Components/Pagination.jsx";
 
+// import { Select } from "./Components/Select.jsx";
+
 function App() {
   const [value, setValue] = useState(""); // задаем useState для всего приложения
 
@@ -25,6 +27,11 @@ function App() {
   ); // массив, в который попадают отфильтрованные по поиску данные
 
   const [perPage, setPerPage] = useState(12); // задаем useState для количества карточек на странице
+
+  function getPerPage(event) {
+    setPerPage(+event.target.value);
+    console.log(currentPage);
+  } // функция принимает событие из getPerPage и меняет состояние количества страниц
 
   const [currentPage, setCurrentPage] = useState(1); // задаем useState для текущей страницы
 
@@ -52,6 +59,7 @@ function App() {
       <Pagination
         lastIndex={Math.ceil(data.length / perPage)} // передаем функцию с последним индексом
         setCurrentPage={setCurrentPage} // передаем функцию для текущей страницы
+        getPerPage={getPerPage}
       />
     </>
   );

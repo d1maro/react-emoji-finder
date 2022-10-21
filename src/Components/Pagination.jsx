@@ -5,7 +5,7 @@
 
 import React from 'react'
 
-export const Pagination = ({lastIndex, setCurrentPage}) => {
+export const Pagination = ({lastIndex, setCurrentPage, getPerPage}) => {
     let arr = [];
     for (let i = 1; i < lastIndex; i++) {
         arr.push(i)
@@ -13,7 +13,12 @@ export const Pagination = ({lastIndex, setCurrentPage}) => {
     return (
     <footer className="footer">
         <div className="container">
-            {arr.map(elem => <button onClick={() => setCurrentPage(elem)}>{elem}</button>)}   
+            {arr.map(elem => <button onClick={() => setCurrentPage(elem)}>{elem}</button>)}
+            <select onChange={getPerPage}>
+                <option value={12}>12</option>
+                <option value={24}>24</option>
+                <option value={48}>48</option>
+            </select>  
         </div>
     </footer>
   )
