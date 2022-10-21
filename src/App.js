@@ -30,7 +30,7 @@ function App() {
 
   function getPerPage(event) {
     setPerPage(+event.target.value);
-    console.log(currentPage);
+    setCurrentPage(1);
   } // функция принимает событие из getPerPage и меняет состояние количества страниц
 
   const [currentPage, setCurrentPage] = useState(1); // задаем useState для текущей страницы
@@ -59,7 +59,7 @@ function App() {
       <Pagination
         lastIndex={Math.ceil(data.length / perPage)} // передаем функцию с последним индексом
         setCurrentPage={setCurrentPage} // передаем функцию для текущей страницы
-        getPerPage={getPerPage}
+        getPerPage={getPerPage} // передаем функцию для количества выводов на страницу
       />
     </>
   );
