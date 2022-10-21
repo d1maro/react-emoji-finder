@@ -2,18 +2,159 @@
 
 /* import "../node_modules/normalize.css/normalize.css"; */
 
+/* RESET CSS HERE: */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+button,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* INDEX STYLE HERE: */
+
+:root {
+  --main-font: "Inter", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--main-font);
 }
 
 img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-:root {
-  --main-font: "Inter", sans-serif;
 }
 
 .container {
@@ -137,4 +278,33 @@ img {
   letter-spacing: 0em;
   text-align: center;
   color: #3f444a;
+}
+
+.footer::before {
+  display: block;
+  content: "";
+  margin-bottom: 19px;
+
+  width: 100%;
+  height: 1px;
+  background-color: #ced4da;
+}
+
+.footer {
+  /* padding-top: 19px; */
+  padding-bottom: 19px;
+  background: #edeef3;
+}
+
+.pagination__button {
+  padding: 12px;
+  margin-right: 1px;
+  font-family: var(--main-font);
+  color: #055160;
+  background-color: #ffffff;
+}
+
+.pagination__button:focus {
+  color: #ffffff;
+  background-color: #055160;
 }

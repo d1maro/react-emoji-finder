@@ -60,6 +60,7 @@ function App() {
         lastIndex={Math.ceil(search.length / perPage)} // передаем функцию с последним индексом
         setCurrentPage={setCurrentPage} // передаем функцию для текущей страницы
         getPerPage={getPerPage} // передаем функцию для количества выводов на страницу
+        currentPage={currentPage} // передаем текущую страницу
       />
     </>
   );
