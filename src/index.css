@@ -296,6 +296,11 @@ img {
   background: #edeef3;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
 .pagination__button {
   padding: 12px;
   margin-right: 1px;
