@@ -10,19 +10,17 @@ import { Card } from "./Components/Card.jsx";
 
 import { Pagination } from "./Components/Pagination.jsx";
 
-// import { Select } from "./Components/Select.jsx";
-
 function App() {
-  const [value, setValue] = useState(""); // задаем useState для всего приложения
+  const [value, setValue] = useState(""); // задаем useState для всего приложения, получаем значение из инпута
 
-  const [currentPage, setCurrentPage] = useState(1); // задаем useState для текущей страницы
+  const [currentPage, setCurrentPage] = useState(0); // задаем useState для текущей страницы
 
   const [perPage, setPerPage] = useState(12); // задаем useState для количества карточек на странице
 
-  function getPerPage(event) {
+  const getPerPage = (event) => {
     setPerPage(+event.target.value);
     setCurrentPage(1);
-  } // функция принимает событие из getPerPage и меняет состояние количества страниц
+  }; // функция принимает событие из getPerPage и меняет состояние количества страниц
 
   const formHandler = (event) => event.preventDefault(); // отменяем перезагрузку страницы при отправке формы
 
@@ -35,7 +33,7 @@ function App() {
     (elem) => elem.keywords.includes(value) || elem.title.includes(value)
   ); // массив, в который попадают отфильтрованные по поиску данные
 
-  let lastElem = currentPage * perPage; // задаем и вычисляем первый элемент
+  let lastElem = (currentPage + 1) * perPage; // задаем и вычисляем первый элемент
 
   let firstElem = lastElem - perPage; // задаем и вычисляем последний элемент
 

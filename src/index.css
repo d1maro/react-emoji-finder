@@ -309,7 +309,7 @@ img {
   background-color: #ffffff;
 }
 
-.pagination__button:focus {
+.pagination__button:nth-child(2) {
   color: #ffffff;
   background-color: #055160;
 }
