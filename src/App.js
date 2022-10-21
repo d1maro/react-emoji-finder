@@ -15,6 +15,15 @@ import { Pagination } from "./Components/Pagination.jsx";
 function App() {
   const [value, setValue] = useState(""); // задаем useState для всего приложения
 
+  const [currentPage, setCurrentPage] = useState(1); // задаем useState для текущей страницы
+
+  const [perPage, setPerPage] = useState(12); // задаем useState для количества карточек на странице
+
+  function getPerPage(event) {
+    setPerPage(+event.target.value);
+    setCurrentPage(1);
+  } // функция принимает событие из getPerPage и меняет состояние количества страниц
+
   const formHandler = (event) => event.preventDefault(); // отменяем перезагрузку страницы при отправке формы
 
   const inputHandler = (event) => {
@@ -26,20 +35,11 @@ function App() {
     (elem) => elem.keywords.includes(value) || elem.title.includes(value)
   ); // массив, в который попадают отфильтрованные по поиску данные
 
-  const [perPage, setPerPage] = useState(12); // задаем useState для количества карточек на странице
-
-  function getPerPage(event) {
-    setPerPage(+event.target.value);
-    setCurrentPage(1);
-  } // функция принимает событие из getPerPage и меняет состояние количества страниц
-
-  const [currentPage, setCurrentPage] = useState(1); // задаем useState для текущей страницы
-
   let lastElem = currentPage * perPage; // задаем и вычисляем первый элемент
 
   let firstElem = lastElem - perPage; // задаем и вычисляем последний элемент
 
-  let arr = data.slice(firstElem, lastElem); // задаем новый массив для вырезанного куска под страницу
+  let arr = search.slice(firstElem, lastElem); // задаем новый массив для вырезанного куска под страницу
 
   return (
     <>
@@ -57,7 +57,7 @@ function App() {
         ))}
       </Main>
       <Pagination
-        lastIndex={Math.ceil(data.length / perPage)} // передаем функцию с последним индексом
+        lastIndex={Math.ceil(search.length / perPage)} // передаем функцию с последним индексом
         setCurrentPage={setCurrentPage} // передаем функцию для текущей страницы
         getPerPage={getPerPage} // передаем функцию для количества выводов на страницу
       />
