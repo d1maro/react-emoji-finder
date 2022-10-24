@@ -341,8 +341,9 @@ img {
   .pagination {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
   }
 }
 
@@ -366,5 +367,18 @@ img {
   .header__input::placeholder {
     font-family: var(--main-font);
     font-size: 18px;
+  }
+  .pagination {
+    font-size: 14px;
+  }
+  .pagination__button {
+    padding: 5px;
+  }
+  .pagination__area {
+    border-radius: 4px;
+    padding: 4px 30px 4px 8px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    background-color: #ffffff;
   }
 }
